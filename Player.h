@@ -2,7 +2,6 @@
 #define EX2_PLAYER_H
 
 #include <string>
-#include <stdbool.h>
 #include "utilities.h"
 #include "Card.h"
 
@@ -14,7 +13,7 @@ public:
     int static const DEFAULT_MAX_HP = 100; // The maximum HP of the player
     int static const DEFAULT_MAX_LEVEL = 10; // The level of the player
     int static const DEFAULT_FORCE = 5; // The maximum force of the player
-    /*
+    /**
      * C'tor of Player class
      *
      * @param name - The name of the player.
@@ -23,7 +22,7 @@ public:
      * @return
      *      New instance of Player.
      */
-    Player(const std::string& name, int maxHP = DEFAULT_MAX_HP, int force = DEFAULT_FORCE);
+    Player(const char* name, int maxHP = DEFAULT_MAX_HP, int force = DEFAULT_FORCE);
     /**
      * print the player's info
      * @return

@@ -1,11 +1,8 @@
 #include "Player.h"
 #include "utilities.h"
-#include "Card.h"
-#include <iostream>
-#include <string>
 
 //Constructor of the player
-Player::Player(const std::string& name, int maxHP, int force) : m_name(name), m_maxHP(maxHP), m_HP(maxHP), m_force(force), m_coins(0), m_level(0){}
+Player::Player(const char* name, int maxHP, int force) : m_name(name), m_maxHP(maxHP), m_HP(maxHP), m_force(force), m_coins(0), m_level(0){}
 //Print the player's info
 void Player::printInfo() const
 {
@@ -14,7 +11,7 @@ void Player::printInfo() const
 //If the player's level is less than 10, level up the player
 void Player::levelUp()
 {
-    if(m_level < 10){    
+    if(m_level < DEFAULT_MAX_LEVEL){
         m_level++;
     }
 }
