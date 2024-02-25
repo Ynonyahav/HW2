@@ -2,7 +2,7 @@
 #include "utilities.h"
 
 //Constructor of the player
-Player::Player(const char* name, int maxHP, int force) : m_name(name), m_maxHP(maxHP), m_HP(maxHP), m_force(force), m_coins(0), m_level(0){}
+Player::Player(const char* name, int maxHP, int force) : m_name(name), m_maxHP(maxHP), m_HP(maxHP), m_force(force), m_coins(0), m_level(1){}
 //Print the player's info
 void Player::printInfo() const
 {

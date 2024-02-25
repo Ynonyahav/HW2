@@ -5,6 +5,7 @@
 #include "Player.h"
 #include "utilities.h"
 
+class Player;
 /*
  * Numeric stats of a card.
  */
