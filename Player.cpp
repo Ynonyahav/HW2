@@ -2,7 +2,22 @@
 #include "utilities.h"
 
 //Constructor of the player
-Player::Player(const char* name, int maxHP, int force) : m_name(name), m_maxHP(maxHP), m_HP(maxHP), m_force(force), m_coins(0), m_level(1){}
+Player::Player(const char* name, int maxHP, int force) :
+    m_name(name), m_maxHP(maxHP),
+    m_HP(maxHP), m_force(force),
+    m_coins(0), m_level(1)
+{
+    if(m_maxHP<=0)
+    {
+        m_maxHP = DEFAULT_MAX_HP;
+    }
+    if(m_force <= 0)
+    {
+        m_force = DEFAULT_FORCE;
+    }
+}
+
+
 //Print the player's info
 void Player::printInfo() const
 {
