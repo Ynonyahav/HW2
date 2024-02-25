@@ -11,7 +11,7 @@ void Player::printInfo() const
 //If the player's level is less than 10, level up the player
 void Player::levelUp()
 {
-    if(m_level < DEFAULT_MAX_LEVEL){
+    if(m_level < MAX_LEVEL){
         m_level++;
     }
 }

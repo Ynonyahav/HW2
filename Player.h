@@ -3,7 +3,6 @@
 
 #include <string>
 #include "utilities.h"
-#include "Card.h"
 
 class Player {
 public:
@@ -11,7 +10,7 @@ public:
      * The default values of the player
     */
     int static const DEFAULT_MAX_HP = 100; // The maximum HP of the player
-    int static const DEFAULT_MAX_LEVEL = 10; // The level of the player
+    int static const MAX_LEVEL = 10; // The level of the player
     int static const DEFAULT_FORCE = 5; // The maximum force of the player
     /**
      * C'tor of Player class
