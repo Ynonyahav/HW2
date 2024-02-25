@@ -13,4 +13,4 @@ add_executable(HW2
         Player.h
         test.cpp
         utilities.cpp
-        utilities.h)
+        utilities.h Mtmchkin.cpp)
