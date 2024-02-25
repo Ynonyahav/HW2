@@ -10,6 +10,7 @@ Player::Player(const char* name, int maxHP, int force) :
     if(m_maxHP<=0)
     {
         m_maxHP = DEFAULT_MAX_HP;
+        m_HP = DEFAULT_MAX_HP;
     }
     if(m_force <= 0)
     {

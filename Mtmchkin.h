@@ -6,7 +6,6 @@
 #define EX2_GAME_H
 
 #include <iostream>
-#include "Player.h"
 #include "Card.h"
 
 /*
