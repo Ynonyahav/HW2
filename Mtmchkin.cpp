@@ -1,6 +1,9 @@
 #include "Mtmchkin.h"
-#include "Player.h"
+#include <string>
+#include <iostream>
+#include "Card.h"
 #include "utilities.h"
+#include "Player.h"
 
 bool DEFEAT=true;
 
