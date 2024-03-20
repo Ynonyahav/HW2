@@ -3,15 +3,16 @@
 
 #include <string>
 
-
 class Player {
 public:
-    /**
+    //Constant value for the maximum level a player can achieve
+    //Default values for the maximum HP amount and the default force if the input from the user is not valid
+    static const int MAX_LEVEL = 10;
+    static const int DEFAULT_MAX_HP = 100;
+    static const int DEFAULT_FORCE = 5;
+    /**k
      * The default values of the player
     */
-    int static const DEFAULT_MAX_HP = 100; // The maximum HP of the player
-    int static const MAX_LEVEL = 10; // The level of the player
-    int static const DEFAULT_FORCE = 5; // The maximum force of the player
     /**
      * C'tor of Player class
      *
@@ -21,7 +22,7 @@ public:
      * @return
      *      New instance of Player.
      */
-    Player(const char* name, int maxHP = DEFAULT_MAX_HP, int force = DEFAULT_FORCE);
+    Player(const std::string& name, int maxHP = DEFAULT_MAX_HP, int force = DEFAULT_FORCE);
     /**
      * print the player's info
      * @return
