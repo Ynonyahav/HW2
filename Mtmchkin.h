@@ -6,8 +6,8 @@
 #define EX2_GAME_H
 
 #include <iostream>
-#include "Player.h"
 #include "Card.h"
+#include "Player.h"
 
 /*
  * GameStatus:
@@ -47,7 +47,7 @@ public:
      *          True if the game ended
      *          False otherwise
      */
-    bool isOver() const;
+    bool isOver() ;  //we remove here the const to simplfy playNextCard function
 
 
     /*

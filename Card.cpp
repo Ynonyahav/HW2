@@ -1,11 +1,8 @@
 #include <iostream>
 #include "Card.h"
-#include "utilities.h"
-#include "Player.h"
 
-
-bool WIN = true;
-bool LOSE = false; 
+#define WIN true
+#define LOSE false 
 
 //Constructor of the card
 Card::Card(CardType type, const CardStats& stats): m_effect(type), m_stats(stats){}
@@ -21,27 +18,27 @@ void Card::applyEncounter(Player& player) const
             player.levelUp();  //add only if level small then 10
             printBattleResult(WIN);
         }
-        else
+        else 
         {
             player.damage(m_stats.hpLossOnDefeat);
             printBattleResult(LOSE);
         }
     }
-    if(m_effect==CardType::Buff)
+    else if(m_effect==CardType::Buff)
     {
         if(player.pay(m_stats.cost))
         {
             player.buff(m_stats.buff);
         }
     }
-    if(m_effect==CardType::Heal)
+    else if(m_effect==CardType::Heal)
     {
         if(player.pay(m_stats.cost))
         {
             player.heal(m_stats.heal);
         }
     }
-    if(m_effect==CardType::Treasure)
+    else if(m_effect==CardType::Treasure)
     {
         player.addCoins(m_stats.loot);
     }
@@ -54,15 +51,15 @@ void Card::printInfo() const
     {
         printBattleCardInfo(m_stats);
     }
-    if(m_effect==CardType::Buff)
+    else if(m_effect==CardType::Buff)
     {
         printBuffCardInfo(m_stats);
     }
-    if(m_effect==CardType::Heal)
+    else if(m_effect==CardType::Heal)
     {
        printHealCardInfo(m_stats);
     }
-    if(m_effect==CardType::Treasure)
+    else if(m_effect==CardType::Treasure)
     {
         printTreasureCardInfo(m_stats);
     }

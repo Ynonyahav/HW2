@@ -1,8 +1,25 @@
 #include "Player.h"
 #include "utilities.h"
+#include <string>
 
 //Constructor of the player
-Player::Player(const char* name, int maxHP, int force) : m_name(name), m_maxHP(maxHP), m_HP(maxHP), m_force(force), m_coins(0), m_level(0){}
+Player::Player(const std::string& name, int maxHP, int force) :
+    m_name(name), m_maxHP(maxHP),
+    m_HP(maxHP), m_force(force),
+    m_coins(0), m_level(1)
+{
+    if(m_maxHP<=0)
+    {
+        m_maxHP = DEFAULT_MAX_HP;
+        m_HP = DEFAULT_MAX_HP;
+    }
+    if(m_force <= 0)
+    {
+        m_force = DEFAULT_FORCE;
+    }
+}
+
+
 //Print the player's info
 void Player::printInfo() const
 {
@@ -11,7 +28,7 @@ void Player::printInfo() const
 //If the player's level is less than 10, level up the player
 void Player::levelUp()
 {
-    if(m_level < MAX_LEVEL){
+    if(m_level < Player::MAX_LEVEL){
         m_level++;
     }
 }
@@ -55,7 +72,7 @@ void Player::damage(int damage)
 //If the player's HP is 0, the player is knocked out
 bool Player::isKnockedOut() const
 {
-    return m_HP == 0;
+    return (m_HP == 0);
 }
 //If the coins is greater than 0, add the coins to the player
 void Player::addCoins(int coins)
@@ -68,7 +85,7 @@ void Player::addCoins(int coins)
 //If the coins is greater than 0, pay the coins
 bool Player::pay(int coins)
 {
-    if(coins > 0 && m_coins >= coins)
+    if(coins >= 0 && m_coins >= coins)
     {
         m_coins -= coins;
         return true;
@@ -78,6 +95,6 @@ bool Player::pay(int coins)
 //Get the attack strength of the player
 int Player::getAttackStrength() const
 {
-    return m_force + m_level;
+    return (m_force + m_level);
 }
 
